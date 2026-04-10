@@ -1,0 +1,410 @@
+/* src/styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    --paper-bg: #f4f1ea;
+    --pencil-color: #2c2c2c;
+}
+
+body {
+    background-color: var(--paper-bg);
+    color: var(--pencil-color);
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.font-sketch {
+    font-family: 'Caveat', cursive;
+}
+
+.sketch-box {
+    border: 2px solid var(--pencil-color);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 4px 4px 0px rgba(44, 44, 44, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sketch-box:hover {
+    box-shadow: 6px 6px 0px rgba(44, 44, 44, 0.25);
+    transform: translateY(-2px);
+}
+
+.sketch-button {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    background: transparent;
+    border: 2px solid var(--pencil-color);
+    border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
+    padding: 8px 32px;
+    cursor: pointer;
+    color: var(--pencil-color);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.sketch-button:hover {
+    background: var(--pencil-color);
+    color: var(--paper-bg);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/* Grid Wrapper */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+/* Style khusus untuk Project Card (Software) */
+.project-card {
+    position: relative;
+    background: white;
+    padding: 1.5rem;
+    border: 2px solid var(--pencil-color);
+    border-radius: 10px 100px 15px 100px/100px 15px 100px 15px;
+    /* Bentuk tidak beraturan */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* Style khusus untuk Game Card (Visual/Polaroid) */
+.game-card {
+    background: white;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border: 1px solid var(--pencil-color);
+    border-radius: 2px;
+    transform: rotate(-1deg);
+    /* Sedikit miring agar terasa natural */
+    transition: transform 0.3s ease;
+}
+
+.game-card:nth-child(even) {
+    transform: rotate(1.5deg);
+}
+
+.game-card:hover {
+    transform: rotate(0deg) scale(1.03);
+    z-index: 10;
+}
+
+.game-img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #eee;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+}
+
+.sketch-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--paper-bg);
+    border-bottom: 2px solid var(--pencil-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Tambahkan sedikit noise di navbar juga */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+    /* Mencegah teks ter-highlight saat di-double click */
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--pencil-color);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-center {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- ICON & IMAGE STYLES --- */
+.icon-links-container {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.sketch-icon {
+    color: var(--pencil-color);
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sketch-icon:hover {
+    transform: scale(1.15) rotate(-5deg);
+    color: #555;
+    /* Sedikit memudar saat di-hover */
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 1px solid var(--pencil-color);
+    border-radius: 5px 255px 5px 255px/255px 5px 255px 5px;
+    margin-bottom: 1rem;
+    background-color: #eae6db;
+    /* Fallback color */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--pencil-color);
+    border-radius: 10px 255px 15px 225px/255px 15px 225px 10px;
+    text-decoration: none;
+    color: var(--pencil-color);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: rgba(44, 44, 44, 0.05);
+    transform: translateY(-3px) rotate(-1deg);
+    box-shadow: 4px 4px 0px rgba(44, 44, 44, 0.15);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.contact-handle {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: -3px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.skill-badge {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid var(--pencil-color);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1) rotate(-3deg);
+    background: var(--pencil-color);
+    color: var(--paper-bg);
+}
+
+.reveal-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .sketch-navbar {
+        padding: 1rem;
+    }
+
+    .nav-center {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 3.5rem !important;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* @media (pointer: fine) {
+
+    body,
+    a,
+    button,
+    .nav-left {
+        cursor: none !important;
+    }
+} */
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: scroll-left 25s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    transition: transform 0.2s ease;
+    cursor: none;
+}
+
+.marquee-item:hover {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hero-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -2rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 900px;
+    width: 100%;
+}
+
+.profile-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border: 3px solid var(--pencil-color);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease-in-out;
+}
+
+.profile-photo:hover {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+    transform: rotate(-3deg) scale(1.02);
+    background: var(--pencil-color);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem !important;
+    }
+}
