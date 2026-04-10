@@ -59,7 +59,7 @@ const HomeStandard = () => {
       title: "Smart City",
       desc: "An interactive web application that displays a 3D visualization of a smart city using Three.js.",
       tech: "HTML, CSS, JavaScript, Three.js",
-      image: "../../public/smartcity.png",
+      image: "/smartcity.png",
       github: "https://github.com/AnandaDly/smart-city",
       website: "https://anandadly.github.io/smart-city/"
     },
@@ -103,7 +103,7 @@ const HomeStandard = () => {
       engine: "Unity",
       status: "Released",
       note: "Indie Game Ignite Game Jam 2024.",
-      image: "../../public/city-cleaner.png",
+      image: "/city-cleaner.png",
       website: "https://rizkyananda.itch.io/city-cleaner"
     },
     {
@@ -111,7 +111,7 @@ const HomeStandard = () => {
       engine: "Unity",
       status: "Released",
       note: "Indie Game Ignite Game Jam 2025.",
-      image: "../../public/overstacked.png",
+      image: "/overstacked.png",
       website: "https://rizkyananda.itch.io/overstacked"
     },
     {
@@ -119,7 +119,7 @@ const HomeStandard = () => {
       engine: "Roblox Studio",
       status: "Released [Beta]",
       note: "",
-      image: "../../public/roblox.png",
+      image: "/roblox.png",
       website: "https://www.roblox.com/games/124753501434403/Become-A-Rich-Fashion-Designer#!/about"
     },
   ];
@@ -136,7 +136,7 @@ const HomeStandard = () => {
               
               <div className="profile-wrapper">
                 <img 
-                  src="../../public/FotoDiri.jpeg" 
+                  src="/FotoDiri.jpeg" 
                   alt="Rizky" 
                   className="profile-photo"
                 />
